@@ -1,0 +1,89 @@
+@import "../mixins/media.scss";
+@import "../utils/variables.scss";
+
+@mixin common-menu-link {
+    display: flex;
+    align-items: center;
+
+    height: 70px;
+    padding: 0 31px;
+
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+@mixin login-password {
+    width: 90%;
+    height: 50px;
+    margin: 0;
+    padding-left: 17px;
+
+    outline: 1px solid #e5ddd5;
+    border: none;
+    background-repeat: no-repeat;
+    background-position-x: 270px;
+    background-position-y: center;
+}
+
+@mixin subtitle {
+    margin: 0 0 0 71px;
+    padding: 0;
+
+    font-size: 40px;
+    line-height: 48px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+@mixin padding-margin-clear {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin standard-fs-lh {
+    font-size: 18px;
+    line-height: 27px;
+}
+
+@mixin outline($outline-color) {
+    outline: 1px solid $outline-color;
+}
+
+@mixin border($border-color) {
+    border: 1px solid $border-color;
+}
+
+@mixin same-size($width) {
+    width: $width;
+    height: $width;
+}
+
+/*
+@mixin wing ($top-desktop, $border-top-desktop, $border-side-color-desktop, $border-top-tablet, $top-mobile, $border-top-mobile, $border-side-color-mobile) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: $top-desktop;
+    z-index: 1000;
+
+    border-top: $border-top-desktop;
+    border-left: 50vw solid $border-side-color-desktop;
+    border-right: 50vw solid $border-side-color-desktop;
+
+    @include media-tablet {
+        top: $top-desktop;
+        border-top: $border-top-tablet;
+    }
+
+    @include media-mobile {
+        top: $top-mobile;
+        border-top: $border-top-mobile;
+        border-left: 160px solid $border-side-color-mobile;
+        border-right: 160px solid $border-side-color-mobile;
+    }
+}
+*/

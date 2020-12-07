@@ -1,0 +1,80 @@
+{
+  "name": "pink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp start",
+    "build": "gulp build",
+    "lighthouse": "gulp build && gulp lighthouse",
+    "test": "editorconfig-cli & stylelint ./src/styles/**/*.scss --syntax scss & eslint ./src/js",
+    "stylelint-fix": "stylelint ./src/styles/**/*.scss --fix --syntax scss",
+    "eslint-fix": "eslint ./src/js/** --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vesterlis/Pink.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vesterlis/Pink/issues"
+  },
+  "homepage": "https://github.com/vesterlis/Pink#readme",
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "chrome-launcher": "latest",
+    "eslint": "^7.11.0",
+    "eslint-config-htmlacademy": "^0.6.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "gulp": "latest",
+    "gulp-babel": "latest",
+    "gulp-connect": "latest",
+    "gulp-html-bem-validator": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-npm-dist": "latest",
+    "gulp-plumber": "latest",
+    "gulp-pug-linter": "latest",
+    "gulp-sass": "latest",
+    "gulp-svgstore": "latest",
+    "gulp-terser": "latest",
+    "gulp-w3c-html-validator": "latest",
+    "lighthouse": "latest",
+    "node-sass": "latest",
+    "webpack-stream": "latest"
+  },
+  "dependencies": {
+    "babel-loader": "latest",
+    "browser-sync": "latest",
+    "circular-dependency-plugin": "latest",
+    "del": "latest",
+    "duplicate-package-checker-webpack-plugin": "latest",
+    "editorconfig-cli": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-eslint": "^6.0.0",
+    "gulp-pug": "latest",
+    "gulp-rename": "latest",
+    "gulp-shorthand": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-stylelint": "latest",
+    "jquery": "latest",
+    "normalize.css": "latest",
+    "open": "latest",
+    "stylelint": "latest",
+    "stylelint-config-htmlacademy": "latest",
+    "stylelint-config-standard": "latest",
+    "stylelint-config-standard-scss": "latest",
+    "stylelint-scss": "latest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test && npm run build"
+    }
+  }
+}

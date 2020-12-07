@@ -1,0 +1,23 @@
+header.header
+  nav.headerNavigation.headerNavigation--closed
+    .wrapperHeader
+      .headerNavigation__logo.logo
+        a(class='logo__link' href)
+          picture
+            source(media='(max-width: 767px)' srcset='img/logotype-white-mobile.svg')
+            source(media='(max-width: 1299px)' srcset='img/logotype-white-tablet.svg')
+            img(class='logo__img' src='img/logotype-white-desktop.svg' alt='Логотип приложения Pink')
+      ul.headerNavigation__navMenu.navMenu
+        li.navMenu__item.navMenu__item--active
+          a.navMenu__link Главная
+
+        li.navMenu__item
+          a(class='navMenu__link' href='photo.html') Фотографии
+
+        li.navMenu__item
+          a(class='navMenu__link' href='form.html') Конкурс
+
+        li.navMenu__item
+          a(class='navMenu__link' href='https://htmlacademy.ru') HTML Academy
+      button(class='headerNavigation__toggle' type='button')
+  

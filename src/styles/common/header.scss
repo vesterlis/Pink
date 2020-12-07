@@ -1,0 +1,331 @@
+@import "../mixins/mixins";
+
+
+header {
+    min-height: 850px;
+    @include padding-margin-clear;
+
+    background-color: #1d2631;
+    background-image: url("../img/back-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+
+    @include media-tablet {
+        min-height: 730px;
+
+        background-image: url("../img/back-tablet.jpg");
+
+        @media (min-resolution: $retina-dpi),
+        (min-resolution: $retina-dppx) {
+            background-image: url("../img/back-tablet@2x.jpg");
+            //это ширина картинки в "натуральную" величину 
+            background-size: 1299px auto;
+        }
+    }
+
+    @include media-mobile {
+        min-height: 730px;
+        @include padding-margin-clear;
+
+        background-image: url("../img/back-mobile.jpg");
+    }
+}
+
+.headerNavigation {
+    width: auto;
+    height: 70px;
+    @include padding-margin-clear;
+
+    background-color: black;
+
+    &__toggle {
+        display: none;
+    }
+
+    @include media-mobile {
+        order: 2;
+        height: 51px;
+    }
+}
+
+.wrapperHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10%;
+
+    @include media-tablet {
+        margin: 0 8.4%;
+    }
+
+    @include media-mobile {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        min-width: 320px;
+        min-height: 51px;
+        margin: 0 auto;
+
+        background-color: #826550;
+    }
+}
+
+.navMenu {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include padding-margin-clear;
+
+    list-style: none;
+
+    @include media-mobile {
+        width: auto;
+    }
+
+    &__item {
+        flex-grow: 1;
+    }
+
+    &__item--active {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 30px;
+            bottom: -3px;
+            left: 30px;
+
+            height: 3px;
+
+            background: #826560;
+        }
+
+        @include media-tablet {
+
+            &--active::after {
+                left: 0px;
+            }
+        }
+    }
+
+    &__link {
+        @include common-menu-link;
+
+        @include media-tablet {
+            margin-right: 32px;
+            @include padding-margin-clear;
+        }
+
+        @include media-mobile {
+            display: flex;
+            height: 50px;
+            align-items: center;
+            padding: 12px 21px;
+
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 24px;
+            text-transform: uppercase;
+
+            background-color: #826550;
+            border-bottom: 1px solid #6a4d38;
+            box-shadow: inset 5px 0 10px -5px #4b3b2f;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@include media-mobile {
+    .headerNavigation__navMenu {
+        display: block;
+    }
+
+    .navMenu__item--active::after {
+        display: none;
+    }
+
+    .headerNavigation--closed .headerNavigation__toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+
+        display: block;
+        width: 70px;
+        height: 50px;
+
+        background-color: #6a4d38;
+
+        cursor: pointer;
+        border: none;
+        outline: none;
+
+        &:hover,
+        &:active {
+            background-color: #624530;
+        }
+
+        &:active {
+            outline: none;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+
+            position: absolute;
+            right: 20px;
+            width: 35px;
+            height: 2px;
+
+            background-color: white;
+        }
+
+        &::before {
+            top: 13px;
+            left: 17px;
+        }
+
+        &::after {
+            top: 35px;
+            left: 17px;
+        }
+    }
+
+    .headerNavigation--closed .toggle__line {
+        position: absolute;
+        top: 24px;
+        left: 17px;
+        width: 35px;
+        height: 2px;
+
+        display: block;
+
+        background-color: white;
+    }
+
+    .headerNavigation--opened .headerNavigation__toggle {
+        position: absolute;
+        top: 0px;
+        right: auto;
+        left: -70px;
+        z-index: 2;
+
+        display: block;
+        width: 70px;
+        height: 50px;
+
+        background-color: #6a4d38;
+
+        cursor: pointer;
+        border: none;
+        outline: none;
+
+        &::before,
+        &::after {
+            content: "";
+
+            position: absolute;
+            top: 24px;
+            left: 18px;
+
+            width: 36px;
+            height: 2px;
+
+            background-color: #ffffff;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+
+        &:hover,
+        &:active {
+            background-color: #624530;
+        }
+
+        &:active {
+            outline: none;
+        }
+    }
+
+    .headerNavigation--closed .navMenu__item {
+        display: none;
+
+        &--active {
+            display: flex;
+            justify-content: center;
+        }
+
+        &--active a {
+            border-bottom: none;
+            box-shadow: none;
+        }
+    }
+
+    .headerNavigation--opened .wrapperHeader {
+        position: absolute;
+        top: 85px;
+        right: 0;
+        left: 70px;
+        z-index: 1000;
+    }
+}
+
+.navMenu__link[href]:focus,
+.navMenu__link[href]:hover {
+    color: #000000;
+    background-color: #ffffff;
+
+    @include media-tablet {
+        color: #534033;
+
+        background-color: #000000;
+    }
+
+    @include media-mobile {
+        background-color: #583921;
+    }
+}
+
+.navMenu__link[href]:active {
+    background-color: #ffffff;
+    color: #9a9a9a;
+
+    @include media-tablet {
+        color: #9a9a9a;
+
+        background-color: #000000;
+    }
+
+    @include media-mobile {
+        color: #917d6f;
+
+        background-color: #392a1f;
+    }
+}
+
+.logo__img {
+    display: block;
+    @include padding-margin-clear;
+
+    @include media-tablet {
+        margin: 39px auto 0 auto;
+    }
+
+    @include media-mobile {
+        order: 1;
+        margin: 29px auto 26px auto;
+    }
+
+}

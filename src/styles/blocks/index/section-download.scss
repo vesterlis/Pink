@@ -1,0 +1,67 @@
+.holder {
+    position: relative;
+}
+
+.download {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: -645px;
+    left: 0;
+    right: 0;
+
+    @include media-mobile {
+        flex-direction: column;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+
+        @include media-mobile {
+            order: 2;
+        }
+    }
+
+    &__slogan {
+        font-size: 50px;
+        font-weight: 300;
+        text-align: center;
+        margin: 0 0 62px 0;
+
+        @include media-mobile {
+            display: none;
+        }
+    }
+
+    &__downloadApp {
+
+        @include media-mobile {
+            margin: 28px 0 32px 0;
+        }
+    }
+
+    &__iconSet {
+        margin: 67px 0 60px 0;
+        align-self: center;
+        width: 70%;
+        display: flex;
+        justify-content: space-around;
+
+        @include media-mobile {
+            @include padding-margin-clear;
+        }
+    }
+
+    &__text {
+        @include padding-margin-clear;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+
+        @include media-mobile {
+            margin: 28px 0 35px 0;
+        }
+    }
+}

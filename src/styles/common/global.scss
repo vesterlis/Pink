@@ -1,0 +1,125 @@
+@import "../../local_modules/normalize.css/normalize";
+@import "../mixins/media.scss";
+@import "../utils/variables.scss";
+@import "../mixins/mixins";
+
+/*
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+*/
+
+body {
+    width: 100%;
+    @include padding-margin-clear;
+
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+
+    background-color: #f8f5f2;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+    @include same-size(1px);
+    margin: -1px;
+    padding: 0;
+
+    border: 0;
+}
+
+.wrapperMain {
+    margin: 0 10%;
+
+    @include media-tablet {
+        margin: 0 8.4%;
+    }
+
+    @include media-mobile {
+        margin: 0 10%;
+    }
+}
+
+.wrapper-mobile {
+    @include media-mobile {
+        margin: 0 6.25%;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    width: 300px;
+    padding: 15px 5px 13px 5px;
+
+    font-weight: bold;
+    font-size: 21px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+
+    border: 3px solid #ffffff;
+    border-radius: 50px;
+    box-sizing: border-box;
+    outline: none;
+
+    &:focus,
+    &:hover {
+        font-weight: bolder;
+        @include outline(transparent);
+        background-color: #ffffff;
+        color: #d22856;
+    }
+
+    &:active {
+        font-weight: bolder;
+        @include outline(transparent);
+        background-color: #ffffff;
+        color: #f1becc;
+    }
+
+    @include media-mobile {
+        width: 100%;
+        border: 4px solid #ffffff;
+    }
+}
+
+.line {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    @include padding-margin-clear;
+
+    background-color: #c9bdb1;
+}
+
+.wing {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-top: 5vw solid #f8f5f2;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+
+    @include media-mobile {
+        border-top: 12vw solid #f8f5f2;
+    }
+}
