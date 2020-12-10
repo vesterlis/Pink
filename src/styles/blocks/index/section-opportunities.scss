@@ -1,0 +1,171 @@
+.effect {
+    display: flex;
+    border: 1px solid transparent;
+
+    &__img {
+        margin: 70px 67px 67px 0;
+
+        @include media-tablet {
+            margin: 70px 67px 0 0;
+        }
+    }
+
+    &__textBlock {
+        display: flex;
+        flex-direction: column;
+        margin: 166px 0 0 0;
+    }
+
+    &__title {
+        @include padding-margin-clear;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    &__text {
+        margin: 29px 0 43px 0;
+        line-height: 27px;
+    }
+
+    &__knowMore {
+        color: #d22856;
+        text-decoration: underline;
+    }
+}
+
+.opportunities {
+    @include padding-margin-clear;
+    background-color: lightblue;
+    border: 1px solid transparent;
+
+    &__questionAnswer {
+        font-size: 50px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    &__list {
+        @include padding-margin-clear;
+        display: flex;
+        justify-content: space-between;
+
+        @include media-tablet {
+            flex-direction: column;
+            background-image: url("../img/iphone-empty-tablet.png");
+            background-repeat: no-repeat;
+            //Такой background-position позволил в планшетной версии разместить фоновый айфон также как на макете (с обрезкой снизу и прижат к левому краю)
+            background-position: right 100% top 0%;
+            background-size: auto;
+        }
+
+        @include media-mobile {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        list-style: none;
+
+        @include media-tablet {
+            margin: 0 0 0 auto;
+            width: 50%;
+        }
+
+        @include media-mobile {
+            max-width: 450px;
+        }
+    }
+
+    &__item--mood {
+        background-image: url("../img/iphone-empty-desktop.png");
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+
+        @include media-tablet {
+            background-image: none;
+            margin-top: 50px;
+        }
+
+        @include media-mobile {
+            background-image: none;
+        }
+    }
+
+    &__item--world {
+        background-image: url("../img/iphone-empty-desktop.png");
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+
+        @include media-tablet {
+            background-image: none;
+        }
+
+        @include media-mobile {
+            background-image: none;
+        }
+    }
+
+    &__item--friends {
+        background-image: url("../img/iphone-empty-desktop.png");
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+
+        @include media-tablet {
+            background-image: none;
+        }
+
+        @include media-mobile {
+            min-height: 500px;
+            background-color: lightsalmon;
+            background-position: right 50% top 140%;
+        }
+    }
+
+    &__textBlock {
+        margin-top: 250px;
+        background-color: #f2f2f2;
+
+        @include media-tablet {
+            margin-top: 0;
+            background: none;
+        }
+
+        @include media-mobile {
+            margin-top: 0;
+            background: none;
+        }
+    }
+
+    &__title {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+
+        @include media-tablet {
+            text-align: left;
+            font-size: 20px;
+        }
+    }
+
+    &__text {
+        padding: 0 10%;
+        text-align: center;
+
+        @include media-tablet {
+            padding: 0;
+
+            text-align: left;
+        }
+
+        @include media-mobile {
+            padding: 0;
+        }
+    }
+
+    &__effect {
+        @include media-mobile {
+            display: none;
+        }
+    }
+}

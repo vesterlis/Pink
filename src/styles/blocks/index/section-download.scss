@@ -1,31 +1,54 @@
+.mainBackground {
+    background-image: url("../img/back-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+
+    @include media-tablet {
+        background-image: url("../img/back-tablet.jpg");
+
+        // @media (min-resolution: $retina-dpi),
+        // (min-resolution: $retina-dppx) {
+        //     background-image: url("../img/back-tablet@2x.jpg");
+        //     //это ширина картинки в "натуральную" величину 
+        //     background-size: 1320px auto;
+        // }
+    }
+
+    @include media-mobile {
+        // min-height: 730px;
+        background-image: url("../img/back-mobile.jpg");
+        background-size: cover;
+    }
+}
+
 .download {
     position: relative;
     color: #ffffff;
     z-index: 10;
 
-    &__mainBlock {
-        position: absolute;
-        top: - 645px;
-        width: auto;
-        min-height: 645px;
 
-        background-color: lightblue;
+    &__mainBlock {
+        min-height: 645px;
+        padding: 100px 0 0 0;
+
         background-image: url("../img/iphone-6.png");
         background-repeat: no-repeat;
-        background-position: center 0;
-        background-size: auto;
+        background-position: center top 100%;
 
         @include media-tablet {
+            padding: 75px 0 0 0;
             background-image: url("../img/iphone-6-tablet.png");
-            top: - 545px;
             min-height: 545px;
         }
 
         @include media-mobile {
+            //Паддинг 50px сверху + background position top 110px позволили сместить картинку с рукой так,чтобы она была расположена также, как на макете по вертикали. 
+            padding: 50px 0 0 0;
             background-image: url("../img/iphone-6-mobile.png");
-            background-position: right 100% bottom 100%;
-            top: - 314px;
+            background-position: right 100% top 110px;
             min-height: 314px;
+            border-top: 1px solid transparent;
         }
     }
 
@@ -36,13 +59,15 @@
         margin: 0 0 0 10px;
 
         @include media-tablet {
-            width: 50%;
+            width: 48%;
             @include padding-margin-clear;
         }
 
         @include media-mobile {
             width: auto;
             @include padding-margin-clear;
+            background-color: #1d2631;
+            margin: 350px 0 0 0;
         }
     }
 
@@ -60,7 +85,7 @@
 
     &__button {
         @include media-mobile {
-            margin: 350px 20px 0 20px;
+            margin: 28px 20px 0 20px;
         }
     }
 
@@ -84,11 +109,5 @@
             margin: 0 14%;
             padding: 0 0 35px 0;
         }
-    }
-}
-
-.wrapperMain {
-    @include media-mobile {
-        margin: 0;
     }
 }

@@ -2,35 +2,14 @@
 
 
 header {
-    min-height: 850px;
     @include padding-margin-clear;
 
-    background-color: #1d2631;
-    background-image: url("../img/back-desktop.jpg");
-    background-repeat: no-repeat;
-    background-position: center 0;
-    background-size: cover;
-
     @include media-tablet {
-        min-height: 730px;
         margin: 260px 0 0 0;
-
-        background-image: url("../img/back-tablet.jpg");
-
-        @media (min-resolution: $retina-dpi),
-        (min-resolution: $retina-dppx) {
-            background-image: url("../img/back-tablet@2x.jpg");
-            //это ширина картинки в "натуральную" величину 
-            background-size: 1320px auto;
-        }
     }
 
     @include media-mobile {
-        min-height: 730px;
         margin: 260px 0 0 0;
-        padding: 0;
-
-        background-image: url("../img/back-mobile.jpg");
     }
 }
 
