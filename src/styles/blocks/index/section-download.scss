@@ -1,26 +1,4 @@
-.mainBackground {
-    background-image: url("../img/back-desktop.jpg");
-    background-repeat: no-repeat;
-    background-position: center 0;
-    background-size: cover;
 
-    @include media-tablet {
-        background-image: url("../img/back-tablet.jpg");
-
-        // @media (min-resolution: $retina-dpi),
-        // (min-resolution: $retina-dppx) {
-        //     background-image: url("../img/back-tablet@2x.jpg");
-        //     //это ширина картинки в "натуральную" величину 
-        //     background-size: 1320px auto;
-        // }
-    }
-
-    @include media-mobile {
-        // min-height: 730px;
-        background-image: url("../img/back-mobile.jpg");
-        background-size: cover;
-    }
-}
 
 .download {
     position: relative;

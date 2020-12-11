@@ -1,0 +1,84 @@
+.pricelist {
+    padding: 150px 0 95px 0;
+    background-image: url("../img/shape3.png");
+    background-repeat: no-repeat;
+    //background-position-y: 0;
+    background-size: cover;
+
+    &__table {
+        display: table;
+        margin: 0 auto 0 auto;
+        width: 89.16%;
+
+        font-size: 18px;
+        line-height: 30px;
+        border-collapse: collapse;
+        empty-cells: hide;
+
+        @include media-tablet {
+            width: 94%;
+            font-size: 14px;
+        }
+
+        @include media-mobile {}
+    }
+
+    &__table-tbody {
+        display: table-row-group;
+    }
+
+    &__table-tr {
+        display: table-row;
+    }
+
+    &__table-th {
+        display: table-cell;
+
+        text-align: center;
+        color: #ffffff;
+    }
+
+    &__table-td {
+        display: table-cell;
+        height: 60px;
+        vertical-align: middle;
+        text-align: center;
+        width: 25%;
+        background-color: #ffffff;
+
+        @include border (#e5e5e5);
+
+        @include media-mobile {}
+    }
+
+    .optionName {
+        padding: 0 20px 0 24px;
+        text-align: left;
+        color: #283645
+    }
+
+    .rate {
+        padding: 25px 0 10px 0;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        background-color: #283645;
+        border-right: 2px solid #e5e5e5;
+
+        @include media-tablet {
+            font-size: 16px;
+        }
+    }
+
+    .cost {
+        padding: 0 0 23px 0;
+        font-size: 24px;
+        font-weight: 300;
+        background-color: #283645;
+        border-right: 2px solid #e5e5e5;
+
+        @include media-tablet {
+            font-size: 18px;
+        }
+    }
+}

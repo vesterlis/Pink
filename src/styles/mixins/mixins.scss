@@ -52,7 +52,7 @@
 }
 
 @mixin border($border-color) {
-    border: 1px solid $border-color;
+    border: 2px solid $border-color;
 }
 
 @mixin same-size($width) {

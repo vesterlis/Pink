@@ -1,0 +1,50 @@
+.effect {
+    //Почему не работает фоновый цвет на весь блок effect???
+    background-color: #f2f2f2;
+
+    &__container {
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        border: 1px solid transparent;
+
+        @include media-mobile {
+            display: none;
+        }
+    }
+
+    &__img {
+        margin: 0 67px 67px 40px;
+
+        @include media-tablet {
+            margin: 70px 67px 0 0;
+        }
+    }
+
+    &__textBlock {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 100px 0 0 0;
+        font-size: 30px;
+        font-weight: bold;
+
+        @include media-tablet {
+            padding: 100px 0 0 0;
+        }
+    }
+
+    &__text {
+        margin: 29px 0 43px 0;
+        line-height: 27px;
+    }
+
+    &__knowMore {
+        color: #d22856;
+        text-decoration: underline;
+    }
+}

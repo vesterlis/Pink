@@ -18,7 +18,7 @@ header {
     height: 110px;
     @include padding-margin-clear;
 
-    background-color: #1d2631;
+    background-color: rgba(40, 54, 69, 0.5);
 
     @include media-mobile {
         height: 67px;
