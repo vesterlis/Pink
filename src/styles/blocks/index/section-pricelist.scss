@@ -2,7 +2,6 @@
     padding: 150px 0 95px 0;
     background-image: url("../img/shape3.png");
     background-repeat: no-repeat;
-    //background-position-y: 0;
     background-size: cover;
 
     &__table {
@@ -20,7 +19,17 @@
             font-size: 14px;
         }
 
-        @include media-mobile {}
+        @include media-mobile {
+            display: none;
+        }
+    }
+
+    &__table--mobile {
+        display: none;
+
+        @include media-mobile {
+            display: table;
+        }
     }
 
     &__table-tbody {
@@ -50,35 +59,103 @@
 
         @include media-mobile {}
     }
+}
 
-    .optionName {
-        padding: 0 20px 0 24px;
-        text-align: left;
-        color: #283645
+.pricelist {
+
+    &__table--mobile {
+
+    //Пришлось поставить ширину для таблицы 300% в мобильной версии, чтобы растянуть её за пределы области отображения и можно было слайдером прокручивать столбцы влево
+        @include media-mobile {
+            display: table;
+            width: 300%;
+        }
     }
 
-    .rate {
-        padding: 25px 0 10px 0;
+    &__table-tbody {
+        display: table-row-group;
+    }
+
+    &__table-tr {
+        display: table-row;
+    }
+
+    &__table-th {
+        display: table-cell;
+
+        text-align: center;
+        color: #ffffff;
+    }
+
+    &__table-td {
+        display: table-cell;
+        height: 60px;
+        padding: 0 17px 0 22px;
+        vertical-align: middle;
+        background-color: #ffffff;
+        box-sizing: border-box;
+
+        @include border (#e5e5e5);
+
+        @include media-mobile {}
+    }
+
+    &__check {
+        @include media-mobile {
+            margin: 0 0 0 15px;
+        }
+    }
+
+    &__toggles {
+        display: none;
+
+        @include media-tablet {
+            display: flex;
+            justify-content: center;
+            margin: 42px 0 0 0;
+        }
+
+        @include media-mobile {
+            display: flex;
+            justify-content: center;
+            @include padding-margin-clear;
+        }
+    }
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.optionName {
+    padding: 0 20px 0 24px;
+    text-align: left;
+    color: #283645;
+}
+
+.rate {
+    padding: 25px 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #283645;
+    border-right: 2px solid #e5e5e5;
+
+    @include media-tablet {
+        font-size: 16px;
+    }
+}
+
+.cost {
+    padding: 0 0 23px 0;
+    font-size: 24px;
+    font-weight: 300;
+    background-color: #283645;
+    border-right: 2px solid #e5e5e5;
+
+    @include media-tablet {
         font-size: 18px;
-        font-weight: bold;
-        text-transform: uppercase;
-        background-color: #283645;
-        border-right: 2px solid #e5e5e5;
-
-        @include media-tablet {
-            font-size: 16px;
-        }
-    }
-
-    .cost {
-        padding: 0 0 23px 0;
-        font-size: 24px;
-        font-weight: 300;
-        background-color: #283645;
-        border-right: 2px solid #e5e5e5;
-
-        @include media-tablet {
-            font-size: 18px;
-        }
     }
 }

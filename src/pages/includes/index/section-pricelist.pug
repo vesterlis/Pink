@@ -42,4 +42,61 @@ section.pricelist.priceListPosition
                 .pricelist__table-td.unlim 
                     img(class='pricelist__yes' src='img/yes.svg')
 
-            
+    .wrapper-mobile
+        article.pricelist__table--mobile
+            .pricelist-table-tbody
+                .pricelist__table-tr
+                    .pricelist__table-th.base.rate База
+                    .pricelist__table-th.standart.rate Стандарт
+                    .pricelist__table-th.unlim.rate Анлим
+
+                .pricelist__table-tr
+                    .pricelist__table-th.base.cost 1,99 USD
+                    .pricelist__table-th.standart.cost 3,99 USD
+                    .pricelist__table-th.unlim.cost 9,99 USD
+
+                .pricelist__table-tr
+                    .pricelist__table-td.base 
+                        .flex-container
+                            span.optionNameMobile Розовый фильтр
+                            img(class='pricelist__check' src='img/yes.svg')
+                    .pricelist__table-td.standart 
+                        .flex-container
+                            span.optionNameMobile Розовый фильтр
+                            img(class='pricelist__check' src='img/yes.svg')
+                    .pricelist__table-td.unlim 
+                        .flex-container
+                            span.optionNameMobile Розовый фильтр
+                            img(class='pricelist__check' src='img/yes.svg')
+
+                .pricelist__table-tr
+                    .pricelist__table-td.base 
+                        .flex-container
+                            span.optionNameMobile Смайлики
+                            img(class='pricelist__check' src='img/no.svg')
+                    .pricelist__table-td.standart
+                        .flex-container
+                            span.optionNameMobile Смайлики
+                            img(class='pricelist__check' src='img/yes.svg')
+                    .pricelist__table-td.unlim
+                        .flex-container
+                            span.optionNameMobile Смайлики
+                            img(class='pricelist__check' src='img/yes.svg')
+
+                .pricelist__table-tr
+                    .pricelist__table-td.base
+                        .flex-container
+                            span.optionNameMobile Комментарии
+                            img(class='pricelist__check' src='img/no.svg')
+                    .pricelist__table-td.standart
+                        .flex-container
+                            span.optionNameMobile Комментарии
+                            img(class='pricelist__check' src='img/no.svg')
+                    .pricelist__table-td.unlim 
+                        .flex-container
+                            span.optionNameMobile Комментарии
+                            img(class='pricelist__check' src='img/no.svg')
+    .pricelist__toggles.slider__toggles
+      button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв Трэвиса Баркера' id='slide1p')
+      button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв 2' id='slide2p')
+      button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв 3' id='slide3p')
