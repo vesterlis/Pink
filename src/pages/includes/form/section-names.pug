@@ -1,0 +1,97 @@
+h3.visually-hidden ФИО
+p.contest__description Поделитесь своей историей и получите шанс выиграть ценный приз - 1000 миль на вашу бонусную карту! Пожалуйста, заполните форму ниже:
+
+section.contest__allBlocks
+    .contest__namesApplication
+        .contest__names.names
+            .names__nameItem.secondName
+                label(class='names__label labelSname' for='member-Sname') Фамилия:
+                input(class='names__blockInput inputSecondName' type='text' name='secondName' placeholder='Укажите фамилию*' id='member-Sname')
+            .names__nameItem.firstName
+                label(class='names__label labelFname' for='member-Fname') Имя:
+                input(class='names__blockInput inputFirstName' type='text' name='firstName' placeholder='Укажите имя*' id='member-Fname')
+            .names__nameItem.middleName
+                label(class='names__label labelMname' for='member-Mname') Отчество:
+                input(class='names__blockInput inputMiddleName' type='text' name='middleName' placeholder='Ну и отчество тоже' id='member-Mname')
+
+        .contest__application.application.application--desktop
+            fieldset.application__block
+                legend.application__legend  С каким приложением путешествовали?
+                .application__list
+                    .application__item.application-ios
+                        input(class='application__radio' type='radio' name='platform' id='ios' value='Pink для IOS' checked)
+                        label(class='application__label' for='ios') Pink для IOS
+
+                    .application__item.application-android
+                        input(class='application__radio' type='radio' name='platform' id='android' value='Pink для Android')
+                        label(class='application__label' for='android') Pink для Android
+
+                    .application__item.application-windows
+                        input(class='application__radio' type='radio' name='platform' id='windows' value='Windows phone')
+                        label(class='application__label' for='windows') Windows Phone
+    
+
+    .contest__contacts.contacts
+        fieldset.contacts__block
+            legend.contacts__legend  Контактная информация
+            .contacts__containerItem.phoneNumber
+                input(class='contacts__blockInput inputPhone' type='tel' name='phoneNumber' placeholder='Номер, пожалуйста' id='member-phoneNumber')
+                label(class='contacts__label labelPhoneNumber' for='member-phoneNumber') Номер телефона
+
+            .contacts__containerItem.emailAddress
+                input(class='contacts__blockInput inputEmail' type='email' name='email' placeholder='Введите почту*' id='member-email')
+                label(class='contacts__label labelEmailAddress' for='member-email') Адрес почты
+
+    .contest__application.application.application--mobile
+            fieldset.application__block
+                legend.application__legend  С каким приложением путешествовали?
+                .application__list
+                    .application__item.application-ios
+                        input(class='application__radio' type='radio' name='platform' id='ios' value='Pink для IOS' checked)
+                        label(class='application__label' for='ios') Pink для IOS
+
+                    .application__item.application-android
+                        input(class='application__radio' type='radio' name='platform' id='android' value='Pink для Android')
+                        label(class='application__label' for='android') Pink для Android
+
+                    .application__item.application-windows
+                        input(class='application__radio' type='radio' name='platform' id='windows' value='Windows phone')
+                        label(class='application__label' for='windows') Windows Phone
+
+    .contest__achievements.achievements
+        fieldset.achievements__block
+            legend.achievements__legend  Ваши безбашенные достижения в путешествии
+            .achievements__column.column1  
+                .achievements__item.selfi
+                    input(class='achievements__checkbox' type='checkbox' name='selfi' id='shark-selfi' checked)
+                    label(class='achievements__label' for='shark-selfi') Сделал селфи с акулой
+                .achievements__item.burn
+                    input(class='achievements__checkbox' type='checkbox' name='burn' id='beach-burn' checked)
+                    label(class='achievements__label' for='beach-burn') Обгорел на пляже
+
+            .achievements__column.column2 
+                .achievements__item.chackNorris
+                    input(class='achievements__checkbox' type='checkbox' name='chackNorris' id='saw-chackNorris' checked)
+                    label(class='achievements__label' for='saw-chackNorris') Видел Чака Норриса
+                .achievements__item.souvenirs
+                    input(class='achievements__checkbox' type='checkbox' name='souvenirs' id='bought-souvenirs' checked)
+                    label(class='achievements__label' for='bought-souvenirs') Накупил суверниров
+
+            .achievements__column.column3   
+                .achievements__item.tower
+                    input(class='achievements__checkbox' type='checkbox' name='tower' id='held-tower' checked)
+                    label(class='achievements__label' for='held-tower') Удержал башню
+                .achievements__item.hotel
+                    input(class='achievements__checkbox' type='checkbox' name='hotel' id='crush-hotel' checked)
+                    label(class='achievements__label' for='crush-hotel') Разгромил отель
+
+    .contest__emotions.emotions
+        fieldset.emotions__block
+            legend.emotions__legend  Опишите свои эмоции
+            label(class='visually-hidden' for='describe-emotions')
+            textarea(class='emotions__textarea' name='describe-emotions-input' placeholder='Можно прям в красках, не стесняясь в выражениях' id='describe-emotions' rows='10')
+    
+    
+    .contest__bottomButtonLine.bottomButtonLine
+        button(class='greenButton' type='submit' name='send') Отправить форму
+        p.bottomButtonLine__remark #[span.bottomButtonLine__star *] - Обязательные для заполнения поля

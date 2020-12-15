@@ -60,6 +60,13 @@
     height: $width;
 }
 
+@mixin legend($text-align) {
+    padding: 0 25px;
+    color: #d22856;
+    text-transform: uppercase;
+    text-align: $text-align;
+}
+
 /*
 @mixin wing ($top-desktop, $border-top-desktop, $border-side-color-desktop, $border-top-tablet, $top-mobile, $border-top-mobile, $border-side-color-mobile) {
     position: absolute;

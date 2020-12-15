@@ -1,0 +1,668 @@
+.contest {
+    position: relative;
+    width: auto;
+    z-index: 10;
+    background-color: #f8f5f2;
+    top: 394px;
+    margin: 0 auto;
+
+    @include media-tablet {
+        width: auto;
+        top: 330px;
+    }
+
+    @include media-mobile {
+        width: auto;
+        top: 170px;
+    }
+
+    &__wrapper {
+        margin: 0 130px;
+
+        @include media-tablet {
+            margin: 0 20px;
+        }
+
+        @include media-mobile {
+            margin: 0 20px;
+        }
+    }
+
+    &__form {
+        padding: 110px 0 52px 0;
+        box-sizing: border-box;
+
+        @include media-mobile {
+            padding: 55px 0 24px 0;
+        }
+    }
+
+    &__description {
+        margin: 0 10% 0 10%;
+        text-align: center;
+
+        @include media-mobile {
+            margin: 0;
+        }
+    }
+
+    &__allBlocks {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__namesApplication {
+        display: flex;
+        justify-content: space-between;
+
+        @include media-tablet {
+            flex-direction: column;
+            margin: 0;
+        }
+
+        @include media-mobile {
+            flex-direction: column;
+            margin: 0;
+            order: 1;
+        }
+
+        &__names {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+
+            @include media-tablet {}
+
+            @include media-mobile {
+                flex-direction: column;
+                margin: 53px 0 42px 0;
+            }
+        }
+    }
+
+    &__application {
+        @include media-mobile {
+            order: 4;
+        }
+    }
+
+    &__contacts {
+        @include media-mobile {
+            order: 3;
+        }
+    }
+
+    &__achievements {
+        @include media-mobile {
+            order: 2;
+        }
+    }
+
+    &__emotions {
+        @include media-mobile {
+            order: 5;
+        }
+    }
+
+    &__bottomButtonLine {
+        @include media-mobile {
+            order: 6;
+        }
+    }
+}
+
+.names {
+    margin: 50px 0 50px 0;
+
+    &__nameItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media-mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__label {
+        margin: 0 20px 0 0;
+        padding: 0;
+        color: #d22856;
+        text-transform: uppercase;
+
+        @include media-mobile {
+            align-self: flex-start;
+            margin: 0 0 14px 23px;
+        }
+    }
+
+    &__blockInput {
+        flex-grow: 1;
+        height: 63px;
+        box-sizing: border-box;
+        padding: 0 0 0 21px;
+        outline: none;
+        @include border(#e5e5e5);
+
+        @include media-mobile {
+            width: 100%;
+        }
+    }
+}
+
+.secondName,
+.firstName {
+    margin: 0 0 54px 0;
+
+    @include media-mobile {
+        margin: 0 0 27px 0;
+    }
+}
+
+.application {
+    margin: 50px 0 0 70px;
+
+    @include media-tablet {
+        margin: 0 0 50px 0;
+    }
+
+    @include media-mobile {
+        margin: 41px 0 0 0;
+    }
+
+    &__block {
+        height: 300px;
+        padding: 50px 50px 55px 75px;
+        @include border(#e5e5e5);
+        box-sizing: border-box;
+
+        @include media-mobile {
+            height: 340px;
+            padding: 50px 50px 55px 20px;
+            border: none;
+        }
+    }
+
+    &__legend {
+        @include legend(center);
+    }
+
+    &__item:not(:last-child) {
+        margin: 0 0 36px 0;
+    }
+
+    &__radio {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    &__radio+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+    }
+
+    &__radio+label::before {
+        content: '';
+        display: inline-block;
+        @include same-size(39px);
+        flex-shrink: 0;
+        flex-grow: 0;
+        @include border(#e5e5e5);
+        border-radius: 50%;
+        margin-right: 20px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+    }
+
+    /* стили для radio-button, находящегося в фокусе, но когда radio-button ещё не в состоянии checked */
+    &__radio:not(:disabled):not(:checked)+label:focus::before {
+        border-color: #000000;
+    }
+
+    /* стили при наведении курсора на radio-button, но когда radio-button ещё не в состоянии checked */
+    &__radio:not(:disabled):not(:checked)+label:hover::before {
+        border-color: #000000;
+    }
+
+    /* стили для активного состояния radio-button (при нажатии на него), когда radio-button ещё не в состоянии checked*/
+    &__radio:not(:disabled):not(:checked):active+label::before {
+        border-color: #d22856;
+        background-color: #ffffff;
+        background-image: url("../img/radio-dot.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+    }
+
+    /* стили для radio-button в состоянии checked */
+    &__radio:checked+label::before {
+        border-color: #e5e5e5;
+        background-color: #ffffff;
+        background-image: url("../img/radio-dot.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+        outline: none;
+    }
+
+    /* стили для radio-button, находящегося в фокусе, когда radio-button уже в состоянии checked */
+    &__radio:checked+label:focus::before {
+        border-color: #000000;
+    }
+
+    /* стили при наведении курсора на radio-button, когда radio-button уже в состоянии checked */
+    &__radio:checked+label:hover::before {
+        border-color: #000000;
+    }
+
+    /* стили для активного состояния radio-button (при нажатии на него), когда radio-button уже в состоянии checked*/
+    &__radio:checked+label:active::before {
+        background-color: #ffffff;
+        background-image: none;
+        background-size: 50% 50%;
+        border-color: #d22856;
+    }
+
+    /* стили для radio-button, находящегося в состоянии disabled */
+    &__radio:disabled+label::before {
+        background-color: #e5e5e5;
+    }
+
+}
+
+.application--desktop {
+    display: block;
+
+    @include media-mobile {
+        display: none;
+    }
+}
+
+.application--mobile {
+    display: none;
+
+    @include media-mobile {
+        display: block;
+    }
+}
+
+.contacts {
+
+    &__block {
+        display: flex;
+        justify-content: center;
+        padding: 38px 58px 23px 58px;
+        @include border(#e5e5e5);
+        box-sizing: border-box;
+
+        @include media-tablet {
+            flex-direction: column;
+        }
+
+        @include media-mobile {
+            flex-direction: column;
+            padding: 11px 0 23px 0;
+            border: none;
+        }
+    }
+
+    &__legend {
+        @include legend(center);
+
+        @include media-mobile {
+            display: none;
+        }
+    }
+
+
+    &__containerItem {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__blockInput {
+        width: 375px;
+        height: 63px;
+        box-sizing: border-box;
+        padding: 0 0 0 21px;
+        outline: none;
+        @include border(#e5e5e5);
+
+        @include media-tablet {
+            margin: 0 auto;
+            width: 500px;
+        }
+
+        @include media-mobile {
+            order: 2;
+            width: auto;
+        }
+    }
+
+    &__label {
+        margin: 20px 0 0 20px;
+        color: #d22856;
+        text-transform: uppercase;
+
+        @include media-tablet {
+            margin: 20px auto 38px auto;
+        }
+
+        @include media-mobile {
+            order: 1;
+            margin: 27px 0 15px 23px;
+        }
+    }
+}
+
+.phoneNumber {
+    margin: 0 70px 0 0;
+
+    @include media-tablet {
+        margin: 0;
+    }
+
+    @include media-mobile {
+        margin: 0;
+    }
+}
+
+.inputPhone {
+    background-image: url("../img/phone-icon.svg");
+    background-repeat: no-repeat;
+    background-size: 20px 19px;
+    background-position-x: 330px;
+    background-position-y: center;
+
+    @include media-tablet {
+        background-position-x: 450px;
+    }
+
+    @include media-mobile {
+        background-image: none;
+    }
+}
+
+.inputEmail {
+    background-image: url("../img/mail-icon.svg");
+    background-repeat: no-repeat;
+    background-size: 18px 13px;
+    background-position-x: 330px;
+    background-position-y: center;
+
+    @include media-tablet {
+        background-position-x: 450px;
+    }
+
+    @include media-mobile {
+        background-image: none;
+    }
+}
+
+.achievements {
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        padding: 45px 58px 12px 58px;
+        margin: 61px 0 0 0;
+        @include border(#e5e5e5);
+        box-sizing: border-box;
+
+        @include media-tablet {
+            flex-direction: column;
+        }
+
+        @include media-mobile {
+            flex-direction: column;
+            padding: 45px 0 0 0;
+            margin: 0;
+            border: none;
+        }
+    }
+
+    &__legend {
+        @include legend(center);
+    }
+
+    &__item {
+        margin: 0 0 43px 0;
+    }
+
+    &__checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    &__checkbox+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+    }
+
+    &__checkbox+label::before {
+        content: '';
+        display: inline-block;
+        @include same-size(39px);
+        flex-shrink: 0;
+        flex-grow: 0;
+        @include border(#e5e5e5);
+        border-radius: 10%;
+        margin-right: 21px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+        box-sizing: border-box;
+    }
+
+    /* стили для checkbox, находящегося в фокусе, но когда checkbox ещё не в состоянии checked */
+    &__checkbox:not(:disabled):not(:checked)+label:focus::before {
+        border-color: #000000;
+    }
+
+    /* стили при наведении курсора на checkbox, но когда checkbox ещё не в состоянии checked */
+    &__checkbox:not(:disabled):not(:checked)+label:hover::before {
+        border-color: #000000;
+    }
+
+    /* стили для активного состояния checkbox (при нажатии на него), когда checkbox ещё не в состоянии checked*/
+    &__checkbox:not(:disabled):not(:checked):active+label::before {
+        border-color: #d22856;
+        background-color: #ffffff;
+        background-image: url("../img/tick.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 70% 50%;
+        box-sizing: border-box;
+    }
+
+    /* стили для checkbox в состоянии checked */
+    &__checkbox:checked+label::before {
+        border-color: #e5e5e5;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        background-image: url("../img/tick.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 70% 50%;
+        outline: none;
+    }
+
+    /* стили для checkbox, находящегося в фокусе, когда checkbox уже в состоянии checked */
+    &__checkbox:checked+label:focus::before {
+        border-color: #000000;
+    }
+
+    /* стили при наведении курсора на checkbox, когда checkbox уже в состоянии checked */
+    &__checkbox:checked+label:hover::before {
+        border-color: #000000;
+    }
+
+    /* стили для активного состояния checkbox (при нажатии на него), когда checkbox уже в состоянии checked*/
+    &__checkbox:checked+label:active::before {
+        background-color: #ffffff;
+        background-image: none;
+        background-size: 50% 50%;
+        border-color: #d22856;
+        box-sizing: border-box;
+    }
+
+    /* стили для checkbox, находящегося в состоянии disabled */
+    &__checkbox:disabled+label::before {
+        background-color: #e5e5e5;
+    }
+
+}
+
+.emotions {
+
+    &__block {
+        padding: 39px 58px 43px 58px;
+        margin: 61px 0 28px 0;
+        @include border(#e5e5e5);
+        box-sizing: border-box;
+
+        @include media-mobile {
+            border: none;
+            margin: 41px 0 48px 0;
+            padding: 0 20px 0 20px;
+        }
+    }
+
+    &__legend {
+        @include legend(center);
+    }
+
+    &__textarea {
+        width: 100%;
+        //Убираем уголок ресайза (правый нижний угол)
+        resize: none;
+        //Убираем в IE горизонтальную полосу прокрутки
+        overflow: auto;
+        padding: 23px 0 0 20px;
+        @include border(#e5e5e5);
+        outline: none;
+
+        @include media-mobile {
+            margin: 19px 0 0 0;
+        }
+    }
+}
+
+
+input:hover,
+textarea:hover {
+    @include border(#000000);
+}
+
+//Благодаря заданию цветного border в состоянии focus при заполнении поля ввода границы также остаются цветными
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+    @include border(#d22856);
+}
+
+//Скрывание placeholder при фокусе на полях ввода
+input:focus::placeholder {
+    color: transparent;
+}
+
+//Скрывание placeholder при фокусе на полях ввода
+textarea:focus::placeholder {
+    color: transparent;
+}
+
+.bottomButtonLine {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-mobile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__star {
+        color: #d22856;
+    }
+
+    &__remark {
+        font-size: 14px;
+        line-height: 30px;
+        text-transform: uppercase;
+    }
+}
+
+.greenButton {
+    width: 300px;
+    height: 63px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+    text-transform: uppercase;
+    background-color: #2aab6d;
+    outline: none;
+    border: none;
+
+    @include media-mobile {
+        width: 100%;
+    }
+}
+
+
+
+.failurePopUp,
+.successPopUp {
+    height: 317px;
+    padding: 60px 0 47px 0;
+    box-sizing: border-box;
+    box-shadow: 0 30px 50px 0 rgba(0, 1, 1, 0.75);
+    background-color: #ffffff;
+}
+
+.failurePopUp {
+    width: 320px;
+}
+
+.successPopUp {
+    width: 460px;
+
+    @include media-mobile {
+        width: 320px;
+    }
+}
+
+.popUp__wrapper--failure,
+.popUp__wrapper--success {
+    display: flex;
+    flex-direction: column;
+}
+
+.popUp__wrapper--success {
+    margin: 0 70px;
+
+    @include media-mobile {
+        margin: 0;
+    }
+}
+
+.failurePopUp__title,
+.successPopUp__title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.failurePopUp_text,
+.successPopUp_text {
+
+    @include padding-margin-clear;
+
+    @include standard-fs-lh;
+
+    text-align: center;
+}
