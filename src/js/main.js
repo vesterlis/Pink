@@ -52,18 +52,18 @@ slide3f.addEventListener(`click`, function () {
 const slide1p = document.getElementById(`slide1p`)
 const slide2p = document.getElementById(`slide2p`)
 const slide3p = document.getElementById(`slide3p`)
-const caretP = document.querySelector(`.pricelist__table--mobile`)
+const caretP = document.querySelector(`.table--mobile`)
 
 slide1p.addEventListener(`click`, function () {
     caretP.style.transform = ` translateX(0%)`
 })
 
 slide2p.addEventListener(`click`, function () {
-    caretP.style.transform = ` translateX(-280px)`
+    caretP.style.transform = ` translateX(-33%)`
 })
 
 slide3p.addEventListener(`click`, function () {
-    caretP.style.transform = ` translateX(-560px)`
+    caretP.style.transform = ` translateX(-66%)`
 })
 
 

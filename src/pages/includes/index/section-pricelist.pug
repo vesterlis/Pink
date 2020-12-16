@@ -1,102 +1,101 @@
 section.pricelist.priceListPosition
     .wrapperMain
     h2.visually-hidden Тарифы
-    article.pricelist__table
-        .pricelist__table-tbody
-            .pricelist__table-tr
-                .pricelist__table-th 
-                .pricelist__table-th.base.rate База
-                .pricelist__table-th.standart.rate Стандарт
-                .pricelist__table-th.unlim.rate Анлим
+    article.pricelist__table.table.table--desktop
+            .table__tr
+                .table__th 
+                .table__th.base.rate База
+                .table__th.standart.rate Стандарт
+                .table__th.unlim.rate Анлим
 
-            .pricelist__table-tr
-                .pricelist__table-th 
-                .pricelist__table-th.base.cost 1,99 USD
-                .pricelist__table-th.standart.cost 3,99 USD
-                .pricelist__table-th.unlim.cost 9,99 USD
+            .table__tr
+                .table__th 
+                .table__th.base.cost 1,99 USD
+                .table__th.standart.cost 3,99 USD
+                .table__th.unlim.cost 9,99 USD
 
-            .pricelist__table-tr
-                .pricelist__table-td.optionName Розовый фильтр
-                .pricelist__table-td.base 
-                    img(class='pricelist__yes' src='img/yes.svg')
-                .pricelist__table-td.standart 
-                    img(class='pricelist__yes' src='img/yes.svg')
-                .pricelist__table-td.unlim 
-                    img(class='pricelist__yes' src='img/yes.svg')
+            .table__tr
+                .table__td.optionName Розовый фильтр
+                .table__td.base 
+                    img(class='table__check' src='img/yes.svg')
+                .table__td.standart 
+                    img(class='table__check' src='img/yes.svg')
+                .table__td.unlim 
+                    img(class='table__check' src='img/yes.svg')
 
-            .pricelist__table-tr
-                .pricelist__table-td.optionName Смайлики
-                .pricelist__table-td.base 
-                    img(class='pricelist__no' src='img/no.svg')
-                .pricelist__table-td.standart
-                    img(class='pricelist__yes' src='img/yes.svg')
-                .pricelist__table-td.unlim
-                    img(class='pricelist__yes' src='img/yes.svg')
+            .table__tr
+                .table__td.optionName Смайлики
+                .table__td.base 
+                    img(class='table__check' src='img/no.svg')
+                .table__td.standart
+                    img(class='table__check' src='img/yes.svg')
+                .table__td.unlim
+                    img(class='table__check' src='img/yes.svg')
 
-            .pricelist__table-tr
-                .pricelist__table-td.optionName Комментарии
-                .pricelist__table-td.base
-                    img(class='pricelist__no' src='img/no.svg')
-                .pricelist__table-td.standart
-                    img(class='pricelist__no' src='img/no.svg')
-                .pricelist__table-td.unlim 
-                    img(class='pricelist__yes' src='img/yes.svg')
+            .table__tr
+                .table__td.optionName Комментарии
+                .table__td.base
+                    img(class='table__check' src='img/no.svg')
+                .table__td.standart
+                    img(class='table__check' src='img/no.svg')
+                .table__td.unlim 
+                    img(class='table__check' src='img/yes.svg')
 
     .wrapper-mobile
-        article.pricelist__table--mobile
-            .pricelist-table-tbody
-                .pricelist__table-tr
-                    .pricelist__table-th.base.rate База
-                    .pricelist__table-th.standart.rate Стандарт
-                    .pricelist__table-th.unlim.rate Анлим
+        article.pricelist__table.table.table--mobile
+                .table__tr
+                    .table__th.base.rate База
+                    .table__th.standart.rate Стандарт
+                    .table__th.unlim.rate Анлим
 
-                .pricelist__table-tr
-                    .pricelist__table-th.base.cost 1,99 USD
-                    .pricelist__table-th.standart.cost 3,99 USD
-                    .pricelist__table-th.unlim.cost 9,99 USD
+                .table__tr
+                    .table__th.base.cost 1,99 USD
+                    .table__th.standart.cost 3,99 USD
+                    .table__th.unlim.cost 9,99 USD
 
-                .pricelist__table-tr
-                    .pricelist__table-td.base 
+                .table__tr
+                    .table__td.base 
                         .flex-container
                             span.optionNameMobile Розовый фильтр
-                            img(class='pricelist__check' src='img/yes.svg')
-                    .pricelist__table-td.standart 
+                            img(class='table__check' src='img/yes.svg')
+                    .table__td.standart 
                         .flex-container
                             span.optionNameMobile Розовый фильтр
-                            img(class='pricelist__check' src='img/yes.svg')
-                    .pricelist__table-td.unlim 
+                            img(class='table__check' src='img/yes.svg')
+                    .table__td.unlim 
                         .flex-container
                             span.optionNameMobile Розовый фильтр
-                            img(class='pricelist__check' src='img/yes.svg')
+                            img(class='table__check' src='img/yes.svg')
 
-                .pricelist__table-tr
-                    .pricelist__table-td.base 
+                .table__tr
+                    .table__td.base 
                         .flex-container
                             span.optionNameMobile Смайлики
-                            img(class='pricelist__check' src='img/no.svg')
-                    .pricelist__table-td.standart
+                            img(class='table__check' src='img/no.svg')
+                    .table__td.standart
                         .flex-container
                             span.optionNameMobile Смайлики
-                            img(class='pricelist__check' src='img/yes.svg')
-                    .pricelist__table-td.unlim
+                            img(class='table__check' src='img/yes.svg')
+                    .table__td.unlim
                         .flex-container
                             span.optionNameMobile Смайлики
-                            img(class='pricelist__check' src='img/yes.svg')
+                            img(class='table__check' src='img/yes.svg')
 
-                .pricelist__table-tr
-                    .pricelist__table-td.base
+                .table__tr
+                    .table__td.base
                         .flex-container
                             span.optionNameMobile Комментарии
-                            img(class='pricelist__check' src='img/no.svg')
-                    .pricelist__table-td.standart
+                            img(class='table__check' src='img/no.svg')
+                    .table__td.standart
                         .flex-container
                             span.optionNameMobile Комментарии
-                            img(class='pricelist__check' src='img/no.svg')
-                    .pricelist__table-td.unlim 
+                            img(class='table__check' src='img/no.svg')
+                    .table__td.unlim 
                         .flex-container
                             span.optionNameMobile Комментарии
-                            img(class='pricelist__check' src='img/no.svg')
-    .pricelist__toggles.slider__toggles
+                            img(class='table__check' src='img/no.svg')
+                            
+    .table__toggles.slider__toggles
       button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв Трэвиса Баркера' id='slide1p')
       button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв 2' id='slide2p')
       button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв 3' id='slide3p')

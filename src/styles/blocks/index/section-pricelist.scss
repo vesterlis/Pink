@@ -1,103 +1,60 @@
 .pricelist {
     padding: 150px 0 95px 0;
+
     background-image: url("../img/shape3.png");
     background-repeat: no-repeat;
     background-size: cover;
-
-    &__table {
-        display: table;
-        margin: 0 auto 0 auto;
-        width: 89.16%;
-
-        font-size: 18px;
-        line-height: 30px;
-        border-collapse: collapse;
-        empty-cells: hide;
-
-        @include media-tablet {
-            width: 94%;
-            font-size: 14px;
-        }
-
-        @include media-mobile {
-            display: none;
-        }
-    }
-
-    &__table--mobile {
-        display: none;
-
-        @include media-mobile {
-            display: table;
-        }
-    }
-
-    &__table-tbody {
-        display: table-row-group;
-    }
-
-    &__table-tr {
-        display: table-row;
-    }
-
-    &__table-th {
-        display: table-cell;
-
-        text-align: center;
-        color: #ffffff;
-    }
-
-    &__table-td {
-        display: table-cell;
-        height: 60px;
-        vertical-align: middle;
-        text-align: center;
-        width: 25%;
-        background-color: #ffffff;
-
-        @include border (#e5e5e5);
-
-        @include media-mobile {}
-    }
 }
 
-.pricelist {
+//Общие стили для таблиц прайс-листа
+.table {
+    display: table;
+    margin: 0 auto 0 auto;
+    width: 89.16%;
 
-    &__table--mobile {
+    font-size: 18px;
+    line-height: 30px;
+    border-collapse: collapse;
+
+    empty-cells: hide;
+
+    @include media-tablet {
+        width: 94%;
+        font-size: 14px;
+    }
 
     //Пришлось поставить ширину для таблицы 300% в мобильной версии, чтобы растянуть её за пределы области отображения и можно было слайдером прокручивать столбцы влево
-        @include media-mobile {
-            display: table;
-            width: 300%;
-        }
+    @include media-mobile {
+        width: 300%;
     }
 
-    &__table-tbody {
-        display: table-row-group;
-    }
-
-    &__table-tr {
+    &__tr {
         display: table-row;
     }
 
-    &__table-th {
+    &__th {
         display: table-cell;
 
         text-align: center;
         color: #ffffff;
     }
 
-    &__table-td {
+    &__td {
         display: table-cell;
+        width: 25%;
         height: 60px;
-        padding: 0 17px 0 22px;
+
         vertical-align: middle;
+        text-align: center;
+
         background-color: #ffffff;
-        box-sizing: border-box;
 
         @include border (#e5e5e5);
 
-        @include media-mobile {}
+        @include media-mobile {
+            width: 33%;
+            padding: 0 17px 0 22px;
+        }
     }
 
     &__check {
@@ -123,23 +80,47 @@
     }
 }
 
+//Показываем таблицу для десктопной и планшетной версии, скрываем её в мобильной
+.table--desktop {
+    display: table;
+
+    @include media-mobile {
+        display: none;
+    }
+}
+
+//Показываем таблицу для мобильной версии, скрываем её в режиме десктопа и планшета
+.table--mobile {
+    display: none;
+
+    @include media-mobile {
+        display: table;
+    }
+}
+
+//Флекс-контейнер, чтобы разместить в ячейке на одной линии подпись и картинку (актуально для мобильной версии)
 .flex-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+//Позиционирование внутри ячейки и стилизация названий опций приложения (1й столбец слева)
 .optionName {
     padding: 0 20px 0 24px;
+
     text-align: left;
     color: #283645;
 }
 
+//Позиционирование и стилизация ячеек 1й строки шапки таблицы (с названиями тарифов)
 .rate {
     padding: 25px 0 10px 0;
+
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
+
     background-color: #283645;
     border-right: 2px solid #e5e5e5;
 
@@ -148,10 +129,13 @@
     }
 }
 
+//Позиционирование и стилизация 2й строки шапки таблицы (со стоимостью тарифов)
 .cost {
     padding: 0 0 23px 0;
+
     font-size: 24px;
     font-weight: 300;
+
     background-color: #283645;
     border-right: 2px solid #e5e5e5;
 
