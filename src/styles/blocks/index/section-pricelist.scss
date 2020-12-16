@@ -1,6 +1,9 @@
 .pricelist {
     padding: 150px 0 95px 0;
 
+    //Этот маржин снизу нужен только для того, чтобы убрать полоску фона в 2px, которая проглядывает между секцией .pricelist и .footer из-за криво обрезанной фоновой картинки у блока .pricelist (снизу прозрачная полоска шириной 1px)
+    margin: 0 0 -2px 0;
+
     background-image: url("../img/shape3.png");
     background-repeat: no-repeat;
     background-size: cover;
