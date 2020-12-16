@@ -206,7 +206,10 @@
 
     &__legend {
         @include legend(center);
-        padding: 42px 25px 0 25px;
+
+        @include media-mobile {
+            padding: 42px 25px 0 25px;
+        }
     }
 
     &__item:not(:last-child) {
