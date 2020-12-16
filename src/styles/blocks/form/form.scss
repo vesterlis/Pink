@@ -453,7 +453,11 @@
 
     &__legend {
         @include legend(center);
-        padding: 100px 25px 0 25px;
+        padding: 0 25px 0 25px;
+
+        @include media-mobile {
+            padding: 100px 25px 0 25px;
+        }
     }
 
     &__item {
